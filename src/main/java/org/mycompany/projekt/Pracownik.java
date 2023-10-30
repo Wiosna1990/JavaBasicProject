@@ -1,24 +1,29 @@
 package org.mycompany.projekt;
 
-public class Pracownik {
-    private String imie;
-    private String nazwisko;
+public class Pracownik extends Osoba
+{
+    //private String imie; //dziedzicze po Osoba
+    //private String nazwisko; //dziedzicze po osoba
     private int id;
-    private KontoBankowe kontoBankowe;
 
-    public Pracownik(String imie, String nazwisko, int id, String kontoBankoweNazwaBanku, String kontoBankoweNumer)
+
+    public Pracownik(String imie, String nazwisko, int id)
     {
-        this.imie=imie;
-        this.nazwisko=nazwisko;
+        //to jest wywolanie konstruktora z klasy osoba
+        //czyli uzupelnienie imie i nazwiska pracownika
+        super(imie,nazwisko);
         this.id=id;
-        this.kontoBankowe= new KontoBankowe(kontoBankoweNazwaBanku,kontoBankoweNumer);
-    }
-    public void wyswietl()
-    {
-        System.out.println("Dane podstawowe pracownika:");
-        System.out.println("Imie: " + imie +"\nNazwisko: " + nazwisko + "\nId: " + id);
-        System.out.println("Dane konta pracownika:");
-        kontoBankowe.wyswietl();
 
     }
+
+    public void drukuj()
+    {
+        //to jest wywolanie metody drukuj z klasy osoba(wydrukowanie iminia i nazwiska)
+        super.drukuj();
+        System.out.println("Id: "+id);
+
+    }
+
+
+
 }
